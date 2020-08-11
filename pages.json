@@ -1,0 +1,58 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "速达易家",
+				"h5":{
+					"titleNView":{
+						"titleColor":"#333333",
+						"buttons":[
+							//左边
+							{
+								"color":"#838383",
+								// "colorPressed":"#bbbbbb",
+								"float":"left",
+								"fontSize":"20px",
+								"fontSrc":"//at.alicdn.com/t/font_1998086_d3f9tln32zs.ttf",
+								// "text":"\ue711",
+								"text":"\ue6c8"
+							},
+							//右边
+							{
+								"color":"#838383",
+								// "colorPressed":"#bbbbbb",
+								"float":"right",
+								"fontSize":"20px",
+								"fontSrc":"//at.alicdn.com/t/font_1998086_d3f9tln32zs.ttf",
+								// "text":"\ue711",
+								"text":"\ue600"
+							},
+							{
+								"color":"#838383",
+								// "colorPressed":"#bbbbbb",
+								"float":"right",
+								"fontSize":"25px",
+								"width":"50px",
+								"fontSrc":"//at.alicdn.com/t/font_1998086_d3f9tln32zs.ttf",
+								// "text":"\ue600",
+								"text":"\ue711"
+							}
+						]
+						
+					}
+				}
+			}
+		}
+	    ,{
+            "path" : "pages/dailycleaning/dailycleaning",
+            "style" : {}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
