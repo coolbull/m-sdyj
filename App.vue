@@ -17,5 +17,5 @@
 	/* uni.css - 通用组件、模板样式库，可以当作一套ui库应用 */
 	@import './common/uni.css';
 	/* iconfont字体库 */
-	@import "//at.alicdn.com/t/font_1998086_pk4m1atl4uh.css";
+	@import "//at.alicdn.com/t/font_1998086_wzguz8cyh8.css";
 </style>

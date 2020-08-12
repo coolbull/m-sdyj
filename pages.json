@@ -46,6 +46,26 @@
 		}
 	    ,{
             "path" : "pages/dailycleaning/dailycleaning",
+            "style" : {
+				"navigationBarTitleText": "日常保洁"
+			}
+        }
+        ,{
+            "path" : "pages/wasteland/wasteland",
+            "style" : {
+            	"navigationBarTitleText": "开荒保洁"
+            }
+        }
+        ,{
+            "path" : "pages/formaldehyde/formaldehyde",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/household/household",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/about/about",
             "style" : {}
         }
     ],
