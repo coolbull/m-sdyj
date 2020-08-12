@@ -18,4 +18,13 @@
 	@import './common/uni.css';
 	/* iconfont字体库 */
 	@import "//at.alicdn.com/t/font_1998086_wzguz8cyh8.css";
+	/* #ifdef H5 */
+			::-webkit-scrollbar {
+			    display: none;  
+			    width: 0 !important;  
+			    height: 0 !important;  
+			    -webkit-appearance: none;  
+			    background: transparent;  
+			}
+		/* #endif */
 </style>

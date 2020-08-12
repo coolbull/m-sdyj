@@ -5,6 +5,7 @@
 			"style": {
 				"navigationBarTitleText": "速达易家",
 				"h5":{
+					"scrollIndicator":"none",//隐藏滚动条
 					"titleNView":{
 						"titleColor":"#333333",
 						"buttons":[
