@@ -1,34 +1,87 @@
 <template>
 	<view class="content">
-		<view class="prove">
-			<view class="item">
-				<view class="iconfont iconnvren"></view>
-				<view class="txt">服务家电：家具、地板、墙面、窗帘等</view>
-			</view>
-			<view class="list">
-				<view class="listitem">
-					<image src="../../static/logo.png" width="150upx" height="150upx" mode=""></image>
-					<p>专业师傅上门检测</p>
-				</view>
-				<view class="listitem">
-					<image src="../../static/logo.png" width="150upx" height="150upx" mode=""></image>
-					<p>专业师傅上门检测</p>
-				</view>
-				<view class="listitem">
-					<image src="../../static/logo.png" width="150upx" height="150upx" mode=""></image>
-					<p>专业师傅上门检测</p>
-				</view>
-			</view>
-		</view>
-		
+		<Swiper :image="image"></Swiper>
+		<Video></Video>
+		<Gird></Gird>
+		<Baojia></Baojia>
+		<standard></standard>
+		<Prove :prove="prove" :list="list"></Prove>
+		<view class="pic"><image src="" mode=""></image></view>
+		<view class="pic"><image src="" mode=""></image></view>
+		<view class="pic"><image src="" mode=""></image></view>
+		<ensure></ensure>
+		<Footer></Footer>
+		<Tab></Tab>
 	</view>
 </template>
 
 <script>
+	import Prove from "../../components/prove/prove.vue";
+	import Standard from "../../components/standard/standard.vue";
+	import Swiper from "../../components/swiper/swiper.vue";
+	import Ensure from "../../components/ensure/ensure.vue";
+	import Guide from "../../components/guide/guide.vue";
+	import Footer from "../../components/footer/footer.vue";
+	import Tab from "../../components/tab/tab.vue";
+	import Video from "../../components/video/video.vue";
+	import Gird from "../../components/gird/gird.vue";
+	import Baojia from "../../components/baojia/baojia.vue";
 	export default {
+		components:{
+			Standard,
+			Swiper,
+			Ensure,
+			Guide,
+			Footer,
+			Tab,
+			Video,
+			Gird,
+			Baojia,
+			Prove
+		},
 		data() {
 			return {
-				
+				image: [{
+						path: "../../static/index/daliy.png"
+					},
+					{
+						path: "../../static/index/wastelang.png"
+					},
+					{
+						path: "../../static/index/household.png"
+					},
+					{
+						path: "../../static/index/formldehyde.png"
+					},
+				],
+				prove:[
+					{
+						txt:"服务人员：速达易家专职员工",
+						
+					},
+					{
+						txt:"服务时间：8:00~18:00（具体时间以实际为准)",
+						
+					},
+					{
+						txt:"服务家电：家具、地板、墙面、窗帘等",
+						
+					}
+				],
+				list:[
+					{
+						src:"../../static/formaldehyde/item1.png",
+						p:"专业师傅上门检测"
+					},
+					{
+						src:"../../static/formaldehyde/item2.png",
+						p:"专业除甲醛"
+					},
+					{
+						src:"../../static/formaldehyde/item3.png",
+						p:"专提供检测报告"
+					}
+				]
 			}
 		},
 		methods: {
@@ -38,34 +91,7 @@
 </script>
 
 <style scoped>
-	.prove{
-		background-color: #f0ffe2;
-		padding-left: 24upx;
-		padding-right: 24upx;
-	}
-	.prove .item{
-		display: flex;
-		align-items: center;
-	}
-	.item .iconnvren{
-		padding-right: 30upx;
-		color: #007635;
-	}
-	.item .txt{
-		font-weight: bold;
-	}
-	.prove .list{
-		display: flex;
-		justify-content: space-between;
-	}
-	.prove .list .listitem image{
-		border: 2upx solid #007635;
-		border-radius: 0.3rem;
-		width: 200upx;
-		height: 180upx;
-	}
-	.prove .list .listitem p{
-		text-align: center;
-		font-size: 18upx;
+	.pic image{
+		width: 100% !important;
 	}
 </style>

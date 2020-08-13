@@ -27,7 +27,7 @@
 				page:[
 					{path:"../../pages/dailycleaning/dailycleaning"},
 					{path:"../../pages/wasteland/wasteland"},
-					{path:"../../pages/formaldehyde/formaldehyde"},
+					{path:"../../pages/household/household"},
 					{path:"../../pages/formaldehyde/formaldehyde"},
 					{path:"../../pages/about/about"},
 				]
