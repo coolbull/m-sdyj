@@ -59,15 +59,21 @@
         }
         ,{
             "path" : "pages/formaldehyde/formaldehyde",
-            "style" : {}
+            "style" : {
+            	"navigationBarTitleText": "上门除甲醛"
+            }
         }
         ,{
             "path" : "pages/household/household",
-            "style" : {}
+            "style" : {
+            	"navigationBarTitleText": "家电清洗"
+            }
         }
         ,{
             "path" : "pages/about/about",
-            "style" : {}
+            "style" : {
+            	"navigationBarTitleText": "关于我们"
+            }
         }
     ],
 	"globalStyle": {
