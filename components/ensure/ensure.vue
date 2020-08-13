@@ -3,7 +3,7 @@
 		<view class="ensure">
 			<!-- 服务说明 -->
 			<view class="introduce">
-				<standard></standard>
+				<standard :ensureserver="ensureserver" :ensuretxt="ensuretxt"></standard>
 			</view>
 			<view class="plist">
 				<view class="iconfont iconrenyuan-05"></view>
@@ -40,6 +40,18 @@
 </template>
 
 <script>
+	import Standard from "../standard/standard.vue"
+	export default {
+		components:{
+			Standard
+		},
+		data(){
+			return{
+				ensureserver:"服务保障",
+				ensuretxt:"全面保障您的权益"
+			}
+		}
+	}
 </script>
 
 <style scoped>

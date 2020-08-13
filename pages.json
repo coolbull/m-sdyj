@@ -75,6 +75,12 @@
             	"navigationBarTitleText": "关于我们"
             }
         }
+        ,{
+            "path" : "pages/baojia/baojia",
+            "style" : {
+            	"navigationBarTitleText": "报价"
+            }
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

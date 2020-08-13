@@ -1,12 +1,14 @@
 <template>
 	<view class="content">
 		<Swiper :image="image"></Swiper>
-		<Video></Video>
+		<Video style="margin-top: 15upx;border: 1upx solid #e8e8e8;padding-top: 15upx;"></Video>
 		<Gird></Gird>
 		<Baojia></Baojia>
-		<standard></standard>
+		<view class="beijing">
+			<standard :standardtitile="standardtitle" :standarddes="standarddes" ></standard>
+		</view>
 		<Prove :prove="prove" :list="list"></Prove>
-		<standard></standard>
+		<standard :ensureserver="ensureserver" :ensuretxt="ensuretxt"></standard>
 		<view class=" balance">
 			<view class="pre">
 				<p>清洗前</p>
@@ -40,10 +42,22 @@
 				<image src="../../static/household/6.png" mode=""></image>
 			</view>
 		</view>
+		<view class="standard-hand">
+				<view class="line"></view>
+				<h2>清洗报价</h2>
+				<view class="line"></view>
+		</view>
+		<view class="pip"><span>专业家电无损清洗</span></view>
+		<view class="pro">
+			<block v-for="(item,index) in pro" :index="index">
+				<view class="proitem">
+					{{item.proitem}}
+				</view>
+			</block>
+		</view>
 		<view class="insturces">
-
 			<h4>温馨提示：</h4>
-			<p>不包含：灯具、家电拆卸、雨棚、阳光房、挑空房屋高处的玻璃、其它具有危险性的地方。因为开荒清洁的特殊性，清洁没有办法达到百分之百的程度。建议亲在做完清洁后，务必本人验收，我们会返工止亲满意为止。</p>
+			<p>以上价格仅供参考，具体价格请提供照片客服报价为准。</p>
 		</view>
 		
 		<!-- <standard></standard> -->
@@ -83,6 +97,20 @@
 		},
 		data() {
 			return {
+				standardtitle:"家电清洗",
+				standarddes:"专业师傅无损清洗",
+				ensureserver:"清洗前后",
+				ensuretxt:"专业无损清洗优质服务",
+				pro:[
+					{proitem:"油烟机:￥300元"},
+					{proitem:"空调:￥300元"},
+					{proitem:"冰箱:￥300元"},
+					{proitem:"洗衣机:￥300元"},
+					{proitem:"锅炉:￥300元"},
+					{proitem:"地暖:￥300元"},
+					{proitem:"洗衣机:￥300元"},
+					{proitem:"锅炉:￥300元"},
+				],
 				plist:[
 					{}
 				],
@@ -136,6 +164,59 @@
 </script>
 
 <style scoped>
+	/* 服务标题公用样式 */
+	.standard-hand{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.standard-hand h2{
+		padding: 30upx;
+	}
+	.standard-hand .line{
+		width: 20%;
+		height: 4upx;
+		background-color: #007635;
+	}
+	 .pip{
+		display: flex;
+		justify-content: center;
+	}
+	 .pip span{
+		display: block;
+		height: 60upx;
+		width: 60%;
+		background-color:#007635;
+		text-align: center;
+		padding-left: 30upx;
+		padding-right: 30upx;
+		border-radius: 1rem;
+		color: #FFFFFF;
+		line-height: 60upx;
+		font-size: 30upx;
+		}
+	/* 项目价格 */
+	.pro{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding-right: 2%;
+		padding-top: 30upx;
+	}
+	.proitem{
+		border: 1upx solid #007635;
+		text-align: center;
+		width: 28%;
+		height: 60upx;
+		margin-left: 3%;
+		line-height: 60upx;
+		margin-bottom: 30upx;
+		margin-top: 30upx;
+	}
+	/* 背景 */
+	.beijing{
+		background-color: #f0ffe2;
+	}
 	.itempic image{
 		margin-top: 30upx;
 		width: 100% !important;

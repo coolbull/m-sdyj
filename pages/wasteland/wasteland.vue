@@ -1,12 +1,14 @@
 <template>
 	<view class="content">
 		<Swiper :image="image"></Swiper>
-		<Video></Video>
+		<Video style="margin-top: 15upx;border: 1upx solid #e8e8e8;padding-top: 15upx;"></Video>
 		<Gird></Gird>
 		<Baojia></Baojia>
-		<standard></standard>
+		<view class="beijing">
+			<standard :standardtitile="standardtitle" :standarddes="standarddes" ></standard>
+		</view>
 		<Prove :prove="prove" :list="list"></Prove>
-		<standard></standard>
+		<standard :ensureserver="ensureserver" :ensuretxt="ensuretxt"></standard>
 		<view class="price">
 			<view class="txt">粗开荒6元/m2</view>
 			<view class="txt">精开荒8元/m2</view>
@@ -55,6 +57,10 @@
 		},
 		data() {
 			return {
+				standardtitle:"开荒保洁",
+				standarddes:"新家开荒洁净体验",
+				ensureserver:"开荒报价",
+				ensuretxt:"具体开荒请联系保洁",
 				plist:[
 					{}
 				],
@@ -62,7 +68,7 @@
 						path: "../../static/index/daliy.png"
 					},
 					{
-						path: "../../static/index/wastelang.png"
+						path: "../../static/index/wasteland.png"
 					},
 					{
 						path: "../../static/index/household.png"
@@ -108,6 +114,10 @@
 </script>
 
 <style scoped>
+	/* 背景 */
+	.beijing{
+		background-color: #f0ffe2;
+	}
 	.itempic image{
 		margin-top: 30upx;
 		width: 100% !important;

@@ -2,23 +2,26 @@
 	<view>
 		<view class="standard-hand">
 			<view class="line"></view>
-			<h2>满意服务</h2>
+			<h2 v-if="standardtitile">{{standardtitile}}</h2>
+			<h2 v-else>{{ensureserver}}</h2>
 			<view class="line"></view>
 		</view>
-		<view class="pip"><span>日常保洁服务标准</span></view>
+		<view class="pip" v-if="standarddes"><span>{{standarddes}}</span></view>
+		<view class="pip" v-else><span>{{ensuretxt}}</span></view>
 	</view>
 </template>
 
 <script>
 	export default {
+		props:{
+			standardtitile:String,
+			standarddes:String,
+			ensureserver:String,
+			ensuretxt:String
+		},
 		data(){
 			return{
-				standard:[
-					{
-						h:"满意服务",
-						pip:"日常保洁服务标准"
-					}
-				]
+
 			}
 		}
 	}
@@ -53,7 +56,7 @@
 		padding-right: 30upx;
 		border-radius: 1rem;
 		color: #FFFFFF;
-		line-height: 70upx;
+		line-height: 60upx;
 		font-size: 30upx;
 	}
 </style>

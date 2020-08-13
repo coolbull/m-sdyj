@@ -1,9 +1,11 @@
 <template>
 	<view>
-		<view class="prove">
+		<view class="prove" @tap="da()">
 			<block v-for="(item,index) in prove" :index="index">
 				<view class="item">
-					<view class="iconfont iconnvren"></view>
+					<view class="iconfont iconnvren"  v-if="0==index"></view>
+					<view class="iconfont iconshijian" v-if="1==index"></view>
+					<view class="iconfont iconjd" v-if="2==index"></view>
 					<view class="txt">{{item.txt}}</view>
 				</view>
 			</block>
@@ -24,7 +26,21 @@
 		props:{
 			prove:Array,
 			list:Array
-		}
+		},
+		data() {
+			return {
+				iconnvren:1,
+				iconshijian:2,
+				iconjdn:3
+			}
+		},
+		methods: {
+			
+			da(){
+				console.log(index);
+				// console.log(this.icon[index].iconclass);
+			}
+		},
 	}
 </script>
 

@@ -56,6 +56,21 @@
 </template>
 
 <script>
+	export default {
+		data(){
+			return{
+				
+			}
+		},
+		methods:{
+			formSubmit(){
+				uni.showToast({
+					title: '功能需要后台提供接口',
+					duration:2000
+				});
+			}	
+		}
+	}
 </script>
 
 <style scoped>
@@ -72,7 +87,7 @@
 	.baojia image {
 		width: 83%;
 		height: 136upx;
-		margin-left: 15upx;
+		margin-left: 32upx;
 		margin-right: 15upx;
 		margin-top: 30upx;
 		border-radius: 0.2rem;

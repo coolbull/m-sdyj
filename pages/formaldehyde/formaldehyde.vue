@@ -1,17 +1,23 @@
 <template>
 	<view class="content">
 		<Swiper :image="image"></Swiper>
-		<Video></Video>
+		<Video style="margin-top: 15upx;border: 1upx solid #e8e8e8;padding-top: 15upx;"></Video>
 		<Gird></Gird>
 		<Baojia></Baojia>
-		<standard></standard>
+		<view class="beijing">
+			<standard :standardtitile="standardtitle" :standarddes="standarddes" ></standard>
+		</view>
 		<Prove :prove="prove" :list="list"></Prove>
-		<view class="pic"><image src="" mode=""></image></view>
-		<view class="pic"><image src="" mode=""></image></view>
+		<view class="standard-hand">
+				<view class="line"></view>
+				<h2>服务范围</h2>
+				<view class="line"></view>
+		</view>
+		<view class="pip"><span>新鲜空气每一天 全方面除甲醛</span></view>
 		<view class="pic"><image src="" mode=""></image></view>
 		<ensure></ensure>
 		<Footer></Footer>
-		<Tab></Tab>
+		<Tab ></Tab>
 	</view>
 </template>
 
@@ -41,11 +47,15 @@
 		},
 		data() {
 			return {
+				standardtitle:"甲醛治理",
+				standarddes:"提供治理后的检测报告",
+				standardrang:"服务范围",
+				standardrangm:"新鲜空气每一天 全方面除甲醛",
 				image: [{
 						path: "../../static/index/daliy.png"
 					},
 					{
-						path: "../../static/index/wastelang.png"
+						path: "../../static/index/wasteland.png"
 					},
 					{
 						path: "../../static/index/household.png"
@@ -91,7 +101,42 @@
 </script>
 
 <style scoped>
+	/* 背景 */
+	.beijing{
+		background-color: #f0ffe2;
+	}
 	.pic image{
 		width: 100% !important;
 	}
+	/* 服务标题公用样式 */
+	.standard-hand{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.standard-hand h2{
+		padding: 30upx;
+	}
+	.standard-hand .line{
+		width: 20%;
+		height: 4upx;
+		background-color: #007635;
+	}
+	 .pip{
+		display: flex;
+		justify-content: center;
+	}
+	 .pip span{
+		display: block;
+		height: 60upx;
+		width: 60%;
+		background-color:#007635;
+		text-align: center;
+		padding-left: 30upx;
+		padding-right: 30upx;
+		border-radius: 1rem;
+		color: #FFFFFF;
+		line-height: 60upx;
+		font-size: 30upx;
+		}
 </style>

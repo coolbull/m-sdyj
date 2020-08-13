@@ -95,7 +95,7 @@
 						path: "../../static/index/daliy.png"
 					},
 					{
-						path: "../../static/index/wastelang.png"
+						path: "../../static/index/wasteland.png"
 					},
 					{
 						path: "../../static/index/household.png"
@@ -246,7 +246,7 @@
 				uni.makePhoneCall({
 
 					// 手机号
-					phoneNumber: '400-135-8966',
+					phoneNumber: '400-836-0510',
 
 					// 成功回调
 					success: (res) => {
