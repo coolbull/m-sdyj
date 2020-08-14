@@ -37,7 +37,7 @@
 			</view>
 		</view>
 		<!-- 服务标准 -->
-		<standard></standard>
+		<standard :standardtitile="standardtitle" :standarddes="standarddes" ></standard>
 		<view class="itempic"><image  src="../../static/dailycleaning/b1.png" mode=""></image></view>
 		<!-- 服务内容 -->
 		
@@ -50,7 +50,7 @@
 		</view>
 		
 		<!-- 服务说明 -->
-		<standard></standard>
+		<standard :ensureserver="ensureserver" :ensuretxt="ensuretxt"></standard>
 		<!-- 价格说明 -->
 		<view class="standardprice">
 			<h2>日常保洁服务价格标准</h2>
@@ -142,6 +142,10 @@
 		},
 		data() {
 			return {
+				standardtitle:"满意服务",
+				standarddes:"日常保洁服务标准",
+				ensureserver:"服务说明",
+				ensuretxt:"日常保洁服务标准",
 				image: [
 					{
 						path: "../../static/index/daliy.png"

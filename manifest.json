@@ -1,10 +1,22 @@
 {
     "name" : "sdyj",
-    "appid" : "",
+    "appid" : "__UNI__AB5F6BF",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
+    "h5" : {
+        "router" : {
+            "base" : "./",
+            "mode" : "hash"
+        },
+        "devServer" : {
+            "https" : false,
+            "port" : ""
+        },
+        "title" : "速达易家",
+        "domain" : "./"
+    },
     /* 5+App特有相关 */
     "app-plus" : {
         "usingComponents" : true,

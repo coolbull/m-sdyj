@@ -6,17 +6,17 @@
 		<Swiper :image="image"></Swiper>
 		<!-- 九宫格导航 -->
 		<view class="gird">
-			<view class="gird-item" style="background-image: url(../../static/index/1.png);background-size: auto 100%;background-repeat:no-repeat;"
+			<view class="gird-item" :style="{backgroundImage:`url(${indexBackgroundImage})`}"
 			 @tap="opendaily">日常保洁</view>
-			<view class="gird-item" style="background-image: url(../../static/index/1.png);background-size: auto 100%;background-repeat:no-repeat;"
+			<view class="gird-item" :style="{backgroundImage:`url(${indexBackgroundImage2})`}"
 			 @tap="openwasteland">开荒保洁</view>
-			<view class="gird-item" style="background-image: url(../../static/index/2.png);background-size: auto 100%;background-repeat:no-repeat;"
+			<view class="gird-item" :style="{backgroundImage:`url(${indexBackgroundImage3})`}"
 			 @tap="openhousehold">家电清洗</view>
-			<view class="gird-item" style="background-image: url(../../static/index/3.png);background-size: auto 100%;background-repeat:no-repeat;"
+			<view class="gird-item" :style="{backgroundImage:`url(${indexBackgroundImage4})`}"
 			 @tap="openformaldehyde">上门除甲醛</view>
-			<view class="gird-item" style="background-image: url(../../static/index/4.png);background-size: auto 100%;background-repeat:no-repeat;"
+			<view class="gird-item" :style="{backgroundImage:`url(${indexBackgroundImage5})`}"
 			 @tap="openabout">关于我们</view>
-			<view class="gird-item" style="background-image: url(../../static/index/5.png);background-size: auto 100%;background-repeat:no-repeat;"
+			<view class="gird-item" :style="{backgroundImage:`url(${indexBackgroundImage6})`}"
 			 @tap="go">电话联系</view>
 		</view>
 		<!-- 精品推荐 -->
@@ -52,13 +52,11 @@
 			<view class="itemcontent" style="font-weight: bold;">专业家庭服务 线上预约平台</view>
 			<view class="itemcontent">速达易家国内的家政服务品牌，家政业务已覆盖全国26个城市为、10万家庭提供服务，好评率达到98%</view>
 			<view class="itempic"><image src="../../static/index/family.png" mode=""></image></view>
-			<Standard></Standard>
+			<standard :standardtitile="standardtitle" :standarddes="standarddes" ></standard>
 			<view class="itemcontent">留下优秀员工区别传统中介家政, 速达易家采用培训上岗! 经过礼仪与理论培训、身份+健康+技能3重认证合格后上岗!训练有素，自然更优秀</view>
 			<view class="itempic"><image src="../../static/index/door.png" mode=""></image></view>
-			<Standard></Standard>
+			<standard :ensureserver="ensureserver" :ensuretxt="ensuretxt"></standard>
 			<view class="itemcontent">四大保障，维护您的权益。进过无数次事件表明可以行安全</view>
-			<view class="itempic"><image  src="../../static/index/door.png" mode=""></image></view>
-			<Standard></Standard>
 			<view class="itempic">
 				<image src="../../static/index/homedes.png" mode=""></image>
 			</view>
@@ -72,6 +70,15 @@
 </template>
 
 <script>
+	// 解决背景图不显示问题
+
+	import indexBackgroundImage from "@/static/index/1.png";	
+	import indexBackgroundImage2 from "@/static/index/2.png";
+	import indexBackgroundImage3 from "@/static/index/3.png";	
+	import indexBackgroundImage4 from "@/static/index/4.png";	
+	import indexBackgroundImage5 from "@/static/index/5.png";	
+	import indexBackgroundImage6 from "@/static/index/6.png";	
+	// 解决背景图不显示问题
 	import paperLeftPopup from '../../components/popup/paper-left-popup.vue';
 	import Swiper from "../../components/swiper/swiper.vue";
 	import Standard from "../../components/standard/standard.vue";
@@ -91,6 +98,16 @@
 		data() {
 			return {
 				show: false,
+				indexBackgroundImage:indexBackgroundImage,
+				indexBackgroundImage2:indexBackgroundImage2,
+				indexBackgroundImage3:indexBackgroundImage3,
+				indexBackgroundImage4:indexBackgroundImage4,
+				indexBackgroundImage5:indexBackgroundImage5,
+				indexBackgroundImage6:indexBackgroundImage6,
+				standardtitle:"放心服务",
+				standarddes:"三证认证 专职员工",
+				ensureserver:"速达易家",
+				ensuretxt:"四大保障，维护您的权益。进过无数次事件表明可以行安全",
 				image: [{
 						path: "../../static/index/daliy.png"
 					},
@@ -312,6 +329,7 @@
 		margin-top: 30upx;
 		margin-bottom: 30upx;
 		text-align: center;
+		background-size: auto 100%;background-repeat:no-repeat;
 	}
 
 	/* 精品推荐 */

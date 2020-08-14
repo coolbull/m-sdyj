@@ -8,13 +8,13 @@
 			<standard :standardtitile="standardtitle" :standarddes="standarddes" ></standard>
 		</view>
 		<Prove :prove="prove" :list="list"></Prove>
-		<view class="standard-hand">
+		<!-- <view class="standard-hand">
 				<view class="line"></view>
 				<h2>服务范围</h2>
 				<view class="line"></view>
-		</view>
-		<view class="pip"><span>新鲜空气每一天 全方面除甲醛</span></view>
-		<view class="pic"><image src="" mode=""></image></view>
+		</view> -->
+		<!-- <view class="pip"><span>新鲜空气每一天 全方面除甲醛</span></view> -->
+		<view class="pic"><image src="../../static/formaldehyde/long.png" mode=""></image></view>
 		<ensure></ensure>
 		<Footer></Footer>
 		<Tab ></Tab>
@@ -138,5 +138,10 @@
 		color: #FFFFFF;
 		line-height: 60upx;
 		font-size: 30upx;
+		}
+		.pic image{
+			width: 100% !important;
+			height: 4200upx;
+			margin-top: 60upx;
 		}
 </style>
