@@ -37,7 +37,8 @@
 							</view>
 					</view>
 					<view class="btn">
-						<view class="consult">在线咨询 </view>
+						<a style="text-decoration: none;" href="mqqwpa://im/chat?chat_type=wpa&uin=1453375133&version=1&src_type=web&web_src=oicqzone.com" rel="nofollow"><view class="consult">在线咨询 </view></a>
+						
 						<view class="order" @tap="go">立即预约</view>
 					</view>
 				</view>

@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<Swiper :image="image"></Swiper>
-		<Video style="margin-top: 15upx;border: 1upx solid #e8e8e8;padding-top: 15upx;"></Video>
+		<Video :house="house" style="margin-top: 15upx;border: 1upx solid #e8e8e8;padding-top: 15upx;"></Video>
 		<Gird></Gird>
 		<Baojia></Baojia>
 		<view class="beijing">
@@ -47,6 +47,7 @@
 		},
 		data() {
 			return {
+				house:"../../static/video/housekeeping.mp4",
 				standardtitle:"甲醛治理",
 				standarddes:"提供治理后的检测报告",
 				standardrang:"服务范围",

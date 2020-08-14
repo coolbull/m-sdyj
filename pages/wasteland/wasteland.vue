@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<Swiper :image="image"></Swiper>
-		<Video style="margin-top: 15upx;border: 1upx solid #e8e8e8;padding-top: 15upx;"></Video>
+		<Video :daily="daily" style="margin-top: 15upx;border: 1upx solid #e8e8e8;padding-top: 15upx;"></Video>
 		<Gird></Gird>
 		<Baojia></Baojia>
 		<view class="beijing">
@@ -57,6 +57,7 @@
 		},
 		data() {
 			return {
+				daily:"../../static/video/Appliances.mp4",
 				standardtitle:"开荒保洁",
 				standarddes:"新家开荒洁净体验",
 				ensureserver:"开荒报价",

@@ -1,8 +1,12 @@
 <template>
 	<view class="tab">
-		<view class="tablist" @tap="qq">
-			<view class="iconfont iconkefu"></view>
-			<view class="txt">在线咨询</view>
+		
+		<view class="tablist">
+			<a style="text-decoration: none;color: black;" href="mqqwpa://im/chat?chat_type=wpa&uin=1453375133&version=1&src_type=web&web_src=oicqzone.com" rel="nofollow">
+				<view class="iconfont iconkefu"></view>
+				<view class="txt">在线咨询</view>
+			</a>
+			
 		</view>
 		<view class="tablist" @tap="call">
 			<view class="iconfont icondianhua"></view>

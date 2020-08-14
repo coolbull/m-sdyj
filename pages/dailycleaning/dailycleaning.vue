@@ -4,7 +4,7 @@
 		<Swiper :image="image"></Swiper>
 		<view class="line" style="height: 2upx;background-color:#e8e8e8; width: 100%;margin-top: 15upx;"></view>
 		<!-- 视频 -->
-		<Video></Video>
+		<Video :daily="daily"></Video>
 		<!-- 九宫格导航 -->
 		<Gird></Gird>
 		<!-- 报价 -->
@@ -146,12 +146,14 @@
 				standarddes:"日常保洁服务标准",
 				ensureserver:"服务说明",
 				ensuretxt:"日常保洁服务标准",
+				daily:"../../static/video/Appliances.mp4",
+				// house:"../../static/video/housekeeping.mp4",
 				image: [
 					{
 						path: "../../static/index/daliy.png"
 					},
 					{
-						path: "../../static/index/wastelang.png"
+						path: "../../static/index/wasteland.png"
 					},
 					{
 						path: "../../static/index/household.png"
