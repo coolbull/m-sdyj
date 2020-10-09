@@ -1,13 +1,13 @@
 <template>
 	<view class="content">
 		<!-- 轮播图 -->
-		<Swiper :image="image"></Swiper>
+		<Swiper :bannertype="bannertype"></Swiper>
 		<!-- 导航简介 -->
 		<view class="nvatitle">
 			<view class="iconfont iconshuxian"></view>
 			<view class="text">速达易家简介</view>
 		</view>
-		<p> &nbsp;&nbsp;速达易家家政服务有限公司，是经工商局注册、税务局登记、国家信息化部备案的正规的保洁公司。专业从事家政保洁服务、开设：开荒保洁、日常保洁、家电清洗、上门除甲醛、等服务。速达易家家政服务有限公司为了创建品牌企业，为了更好的服务广大客户而推出的延伸服务，实行了扎实的技术实践培训，规范化企业管理，提供专业的优质服务，以此来取得广大客户的信任和支持。为了更好的服务客户，已开通全国免费电话:400-836-0510以便联系。有什么</p>
+		<p>{{data.intr}}</p>
 		<view class="nvatitle">
 			<view class="iconfont iconshuxian"></view>
 			<view class="text">服务项目</view>
@@ -48,23 +48,35 @@
 		},
 		data() {
 			return {
-				image: [
-					{
-						path: "../../static/index/daliy.png"
-					},
-					{
-						path: "../../static/index/wasteland.png"
-					},
-					{
-						path: "../../static/index/household.png"
-					},
-					{
-						path: "../../static/index/formldehyde.png"
-					},
-					]
+				bannertype:7,
+				data:{}
 			}
 		},
+		created() {
+			this.getCompanyinfo();
+			// uni.$emit('companyinfo',{data:this.data})
+			// console.log('aaa');
+			
+		},
 		methods: {
+			//home - 获取公司信息
+			getCompanyinfo(){
+				//获取数据
+				this.$myRequest({
+					url:'index/company-info',
+					data:{},
+					methods:"GET"
+				}).then(res=>{
+					if(res.data.code == 0){
+						// console.log(res.data.msg);
+							this.data = res.data.data;
+					}else if(res.data.code == 1){
+						console.log(res.data.msg);
+					}else{
+						console.log(res.data.msg)
+					}
+				})
+			},
 			// 导航页面
 			opendaily() {
 				uni.navigateTo({

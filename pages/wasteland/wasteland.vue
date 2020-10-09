@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
-		<Swiper :image="image"></Swiper>
-		<Video :daily="daily" style="margin-top: 15upx;border: 1upx solid #e8e8e8;padding-top: 15upx;"></Video>
+		<Swiper :bannertype="bannertype"></Swiper>
+		<Video :type="type" style="margin-top: 15upx;border: 1upx solid #e8e8e8;padding-top: 15upx;"></Video>
 		<Gird></Gird>
 		<Baojia></Baojia>
 		<view class="beijing">
@@ -57,7 +57,7 @@
 		},
 		data() {
 			return {
-				daily:"../../static/video/Appliances.mp4",
+				type:2,
 				standardtitle:"开荒保洁",
 				standarddes:"新家开荒洁净体验",
 				ensureserver:"开荒报价",
@@ -65,19 +65,7 @@
 				plist:[
 					{}
 				],
-				image: [{
-						path: "../../static/index/daliy.png"
-					},
-					{
-						path: "../../static/index/wasteland.png"
-					},
-					{
-						path: "../../static/index/household.png"
-					},
-					{
-						path: "../../static/index/formldehyde.png"
-					},
-				],
+				bannertype:3,
 				prove:[
 					{
 						txt:"服务人员：速达易家专职员工",

@@ -2,7 +2,7 @@
 	<view class="tab">
 		
 		<view class="tablist">
-			<a style="text-decoration: none;color: black;" href="mqqwpa://im/chat?chat_type=wpa&uin=1453375133&version=1&src_type=web&web_src=oicqzone.com" rel="nofollow">
+			<a style="text-decoration: none;color: black;" href="http://ser.sudayijia.com/public/applet/service/index" rel="nofollow">
 				<view class="iconfont iconkefu"></view>
 				<view class="txt">在线咨询</view>
 			</a>
@@ -27,10 +27,44 @@
 	export default {
 		data() {
 			return {
-				
+				data:{}
 			}
 		},
+		mounted() {
+			// this.broadcast.$on("companyinfo",function(e){
+			// 	this.data=e;
+			// 	console.log("全局监听数据");
+			// 	console.log(e);
+				
+			// })
+		},
+		created() {
+			// uni.$on('companyinfo',function(data){
+			// 	console.log('监听到事件来自 update ，携带参数 msg 为：' + data.data);
+			// 	console.log(this.data);
+			// })
+			this.getCompanyinfo();
+		},
 		methods:{
+			//home - 获取公司信息
+			getCompanyinfo(){
+				//获取数据
+				this.$myRequest({
+					url:'index/company-info',
+					data:{},
+					methods:"GET"
+				}).then(res=>{
+					if(res.data.code == 0){
+						// console.log(res.data.msg);
+							this.data = res.data.data;
+							// console.log(this.data);
+					}else if(res.data.code == 1){
+						console.log(res.data.msg);
+					}else{
+						console.log(res.data.msg)
+					}
+				})
+			},
 			qq(){
 				uni.showToast({
 					title: '调用qq接口'
@@ -40,7 +74,7 @@
 				uni.makePhoneCall({
 				
 					// 手机号
-					phoneNumber: '400-836-0510',
+					phoneNumber: this.data.phone,
 				
 					// 成功回调
 					success: (res) => {

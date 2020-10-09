@@ -7,15 +7,16 @@
     "transformPx" : false,
     "h5" : {
         "router" : {
-            "base" : "./",
-            "mode" : "hash"
+            "base" : "",
+            "mode" : "history"
         },
         "devServer" : {
             "https" : false,
             "port" : ""
         },
         "title" : "速达易家",
-        "domain" : "./"
+        "domain" : "m.sudayijia.com",
+        "template" : "ico.html"
     },
     /* 5+App特有相关 */
     "app-plus" : {

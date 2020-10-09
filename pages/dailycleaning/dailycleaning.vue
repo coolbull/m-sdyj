@@ -1,10 +1,10 @@
 <template>
 	<view>
 		<!-- 轮播图 -->
-		<Swiper :image="image"></Swiper>
+		<Swiper :bannertype="bannertype"></Swiper>
 		<view class="line" style="height: 2upx;background-color:#e8e8e8; width: 100%;margin-top: 15upx;"></view>
 		<!-- 视频 -->
-		<Video :daily="daily"></Video>
+		<Video :type="type"></Video>
 		<!-- 九宫格导航 -->
 		<Gird></Gird>
 		<!-- 报价 -->
@@ -146,22 +146,9 @@
 				standarddes:"日常保洁服务标准",
 				ensureserver:"服务说明",
 				ensuretxt:"日常保洁服务标准",
-				daily:"../../static/video/Appliances.mp4",
+				type:1,
 				// house:"../../static/video/housekeeping.mp4",
-				image: [
-					{
-						path: "../../static/index/daliy.png"
-					},
-					{
-						path: "../../static/index/wasteland.png"
-					},
-					{
-						path: "../../static/index/household.png"
-					},
-					{
-						path: "../../static/index/formldehyde.png"
-					},
-				],
+				bannertype:2,
 				gird:[
 					{
 						path:""

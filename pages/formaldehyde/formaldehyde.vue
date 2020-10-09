@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
-		<Swiper :image="image"></Swiper>
-		<Video :house="house" style="margin-top: 15upx;border: 1upx solid #e8e8e8;padding-top: 15upx;"></Video>
+		<Swiper :bannertype="bannertype"></Swiper>
+		<Video :type="type" style="margin-top: 15upx;border: 1upx solid #e8e8e8;padding-top: 15upx;"></Video>
 		<Gird></Gird>
 		<Baojia></Baojia>
 		<view class="beijing">
@@ -47,24 +47,12 @@
 		},
 		data() {
 			return {
-				house:"../../static/video/housekeeping.mp4",
+				type:4,
 				standardtitle:"甲醛治理",
 				standarddes:"提供治理后的检测报告",
 				standardrang:"服务范围",
 				standardrangm:"新鲜空气每一天 全方面除甲醛",
-				image: [{
-						path: "../../static/index/daliy.png"
-					},
-					{
-						path: "../../static/index/wasteland.png"
-					},
-					{
-						path: "../../static/index/household.png"
-					},
-					{
-						path: "../../static/index/formldehyde.png"
-					},
-				],
+				bannertype:5,
 				prove:[
 					{
 						txt:"服务人员：速达易家专职员工",

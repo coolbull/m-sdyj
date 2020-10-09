@@ -3,7 +3,7 @@
 		<!-- 操作菜单 -->
 		<paper-left-popup :show="show" @hide="hidepopup" @addfriend="addfrined" @clear="clear"></paper-left-popup>
 		<!-- 轮播图 -->
-		<Swiper :image="image"></Swiper>
+		<Swiper :bannertype="bannertype"></Swiper>
 		<!-- 九宫格导航 -->
 		<view class="gird">
 			<view class="gird-item" :style="{backgroundImage:`url(${indexBackgroundImage})`}"
@@ -25,19 +25,20 @@
 			<block v-for="(item,index) in recommend" :index="index">
 				<view class="recommend-list">
 					<view class="recommend-content">
-						<image :src=item.path mode=""></image>
+						<image :src=item.img_url mode=""></image>
 							<view class="des">
-								<h3>{{item.h}}</h3>
+								<h3>{{item.title}}</h3>
 								<view class="mark">
-									<block block v-for="(items,index) in item.p" :index="index">
-										<p class="star iconfont iconxing"><span>{{items.tag}}</span></p>
+									<block block v-for="(items,index) in item.tag" :index="index">
+										<p class="star iconfont iconxing"><span>{{items}}</span></p>
 									</block>
 								</view>
-								<p class="price">价格:<span style="color: red;">{{item.price}}</span></p>
+								<p v-if="item.price" class="price">价格:<span style="color: red;">{{item.price}}元/{{item.unit==1?"小时":"平方"}}</span></p>
+								<p v-else="item.price" class="price">价格:<span style="color: red;">咨询客服</span></p>
 							</view>
 					</view>
 					<view class="btn">
-						<a style="text-decoration: none;" href="mqqwpa://im/chat?chat_type=wpa&uin=1453375133&version=1&src_type=web&web_src=oicqzone.com" rel="nofollow"><view class="consult">在线咨询 </view></a>
+						<a style="text-decoration: none;" href="http://ser.sudayijia.com/public/applet/service/index" rel="nofollow"><view class="consult">在线咨询 </view></a>
 						
 						<view class="order" @tap="go">立即预约</view>
 					</view>
@@ -109,116 +110,44 @@
 				standarddes:"三证认证 专职员工",
 				ensureserver:"速达易家",
 				ensuretxt:"四大保障，维护您的权益。进过无数次事件表明可以行安全",
-				image: [{
-						path: "../../static/index/daliy.png"
-					},
-					{
-						path: "../../static/index/wasteland.png"
-					},
-					{
-						path: "../../static/index/household.png"
-					},
-					{
-						path: "../../static/index/formldehyde.png"
-					},
-				],
+				bannertype:1,
 				gird: [{
 					text: "日常保洁",
 					path: "../"
 
 				}],
 				recommend: [
-					{
-					h: "日常保洁上门服务",
-					path:"../../static/index/smalldaliy.png",
-					p: [{
-							tag: "专业保洁师"
-						},
-						{
-							tag: "提供售后保障"
-						},
-						{
-							tag: "速达易家员工"
-						},
-						{
-							tag: "不磨洋工"
-						},
-						{
-							tag: "服务满意为止"
-						},
-					],
-					price: "60/小时"
-				}, 
-				{
-					h: "开荒保洁上门服务",
-					path:"../../static/index/smallland.png",
-					p: [{
-							tag: "专业保洁师"
-						},
-						{
-							tag: "提供售后保障"
-						},
-						{
-							tag: "速达易家员工"
-						},
-						{
-							tag: "不磨洋工"
-						},
-						{
-							tag: "服务满意为止"
-						},
-					],
-					price: "6元/平方"
-				}, 
-				{
-					h: "家电清洗上门服务",
-					path:"../../static/index/house.png",
-					p: [{
-							tag: "专业保洁师"
-						},
-						{
-							tag: "提供售后保障"
-						},
-						{
-							tag: "速达易家员工"
-						},
-						{
-							tag: "不磨洋工"
-						},
-						{
-							tag: "服务满意为止"
-						},
-					],
-					price: "咨询客服"
-				}, 
-				{
-					h: "上门除甲醛服务",
-					path:"../../static/index/jiaquan.png",
-					p: [{
-							tag: "专业保洁师"
-						},
-						{
-							tag: "提供售后保障"
-						},
-						{
-							tag: "速达易家员工"
-						},
-						{
-							tag: "不磨洋工"
-						},
-						{
-							tag: "服务满意为止"
-						},
-					],
-					price: "50元/平方"
-				}, 
+					
 				]
 			}
 		},
 		onLoad() {
 			// console.log(items.tag);
+			
+			this.getRecommend();
 		},
 		methods: {
+			
+			//获取推荐
+			getRecommend(){
+				this.$myRequest({
+					url:'index/recommend',
+					data:{},
+					methods:"GET"
+					
+				}).then(res=>{
+					// console.log(res);
+					if(res.data.code == 0){
+						// console.log(res.data.msg);
+						// console.log(res.data);
+						this.recommend = res.data.data;
+					}else if(res.data.code == 1){
+						// console.log(res.data.msg);
+					}else{
+						// console.log(res.data.msg)
+					}
+				})
+			},
 			//操作菜单
 			addfrined() {
 				console.log('addfirend');

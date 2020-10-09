@@ -2,8 +2,8 @@
 	<view>
 		<view class=" ">
 			<view>
-				<video v-if="daily" id="myVideo" :src=daily @error="videoErrorCallback"  enable-danmu danmu-btn controls></video>
-				 <video v-else  id="myVideo" :src=house @error="videoErrorCallback"  enable-danmu danmu-btn controls></video>
+				<video  id="myVideo" :src="data.video_url"   enable-danmu danmu-btn controls></video>
+				 <!-- <video v-else  id="myVideo" :src=house @error="videoErrorCallback"  enable-danmu danmu-btn controls></video> -->
 			</view>
 		</view>
 	</view>
@@ -12,14 +12,40 @@
 <script>
 	export default{
 		props:{
-			daily:String,
-			house:String
+			type:Number
 		},
 		data() {
 			return {
-				// key: value
+				data:{}
 			}
 		},
+		created() {
+			this.getVideo();
+		},
+		methods:{
+			//获取视频
+			getVideo(){
+				//获取数据
+				this.$myRequest({
+					url:'other/get-video',
+					data:{},
+					methods:"GET"
+				}).then(res=>{
+					if(res.data.code == 0){
+						// console.log(res.data.msg);
+						for (var i = 0; i < res.data.data.length; i++) {
+							if(res.data.data[i].type == this.type){//判断类型 类型 1：日常保洁 2：开荒保洁 3：家电清洁 4：上门除甲醛
+								this.data = res.data.data[i];
+							}
+						}	
+					}else if(res.data.code == 1){
+						console.log(res.data.msg);
+					}else{
+						console.log(res.data.msg)
+					}
+				})
+			}
+		}
 	}
 </script>
 

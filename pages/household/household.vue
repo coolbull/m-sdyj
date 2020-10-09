@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
-		<Swiper :image="image"></Swiper>
-		<Video :house="house" style="margin-top: 15upx;border: 1upx solid #e8e8e8;padding-top: 15upx;"></Video>
+		<Swiper :bannertype="bannertype"></Swiper>
+		<Video :type="type" style="margin-top: 15upx;border: 1upx solid #e8e8e8;padding-top: 15upx;"></Video>
 		<Gird></Gird>
 		<Baojia></Baojia>
 		<view class="beijing">
@@ -97,7 +97,7 @@
 		},
 		data() {
 			return {
-				house:"../../static/video/housekeeping.mp4",
+				type:3,
 				standardtitle:"家电清洗",
 				standarddes:"专业师傅无损清洗",
 				ensureserver:"清洗前后",
@@ -115,33 +115,8 @@
 				plist:[
 					{}
 				],
-				image: [{
-						path: "../../static/index/daliy.png"
-					},
-					{
-						path: "../../static/index/wasteland.png"
-					},
-					{
-						path: "../../static/index/household.png"
-					},
-					{
-						path: "../../static/index/formldehyde.png"
-					},
-				],
-				prove:[
-					{
-						txt:"服务人员：速达易家专职员工",
-						
-					},
-					{
-						txt:"服务时间：8:00~18:00（具体时间以实际为准)",
-						
-					},
-					{
-						txt:"服务范围：空调、热水器、冰箱、地暖、管道等",
-						
-					}
-				],
+				prove:[],
+				bannertype:4,
 				list:[
 					{
 						src:"../../static/household/household1.png",
